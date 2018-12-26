@@ -20,13 +20,13 @@ MemeField::MemeField(int nBombs, int fieldSize_in)
 	std::uniform_int_distribution<int> xDist(0, fieldSize - 1);
 	std::uniform_int_distribution<int> yDist(0, fieldSize - 1);
 
-	for (int nSpawned = 0; nSpawned < nBombs; ++nSpawned)
+	for (int nspawned = 0; nspawned < nBombs; ++nspawned)
 	{
 		Vei2 pos;
 		do {
 			pos.x = xDist(rng);
 			pos.y = yDist(rng);
-		} while (!block.at(pos.y*fieldSize + pos.x).hasBomb);
+		} while (block.at(pos.y*fieldSize + pos.x).hasBomb);
 		block[pos.y*fieldSize + pos.x].hasBomb = true;
 	}
 }

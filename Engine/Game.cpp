@@ -43,5 +43,5 @@ void Game::UpdateModel()
 
 void Game::ComposeFrame()
 {
-	//memeField.Draw(gfx);
+	memeField.Draw(gfx);
 }
