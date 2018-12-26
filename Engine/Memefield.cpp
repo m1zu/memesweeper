@@ -1,6 +1,8 @@
 #include "Memefield.h"
+
 #include <assert.h>
 #include <random>
+
 #include "Vei2.h"
 #include "SpriteCodex.h"
 
@@ -31,8 +33,12 @@ MemeField::MemeField(int nBombs, int fieldSize_in)
 
 void MemeField::Draw(Graphics & gfx)
 {
-	for (int i = 0; i < fieldSize*fieldSize; ++i)
-	{
-		block[i].
-	}
+	Vei2 pos;
+	for (int x = 0; x < fieldSize; ++x)
+		for (int y = 0; y < fieldSize; ++y)
+		{
+			pos.x = x * SpriteCodex::tileSize;
+			pos.y = y * SpriteCodex::tileSize;
+			SpriteCodex::DrawTile0(pos, gfx);
+		}
 }

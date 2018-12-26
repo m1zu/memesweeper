@@ -20,9 +20,6 @@ private:
 	public:
 		BlockStatus status = BlockStatus::hidden;
 		bool hasBomb = false;
-	public:
-		void Draw(Graphics& gfx, const int pos1Dmapped);
-		void Draw(Graphics& gfx, const Vei2& gridPos);
 	};
 
 private:
