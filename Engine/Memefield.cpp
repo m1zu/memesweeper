@@ -2,6 +2,7 @@
 #include <assert.h>
 #include <random>
 #include "Vei2.h"
+#include "SpriteCodex.h"
 
 MemeField::MemeField(int nBombs, int fieldSize_in)
 	:
@@ -23,6 +24,15 @@ MemeField::MemeField(int nBombs, int fieldSize_in)
 		do {
 			pos.x = xDist(rng);
 			pos.y = yDist(rng);
-		} while ( block.at(pos.y*fieldSize+pos.x))
+		} while (!block.at(pos.y*fieldSize + pos.x).hasBomb);
+		block[pos.y*fieldSize + pos.x].hasBomb = true;
+	}
+}
+
+void MemeField::Draw(Graphics & gfx)
+{
+	for (int i = 0; i < fieldSize*fieldSize; ++i)
+	{
+		block[i].
 	}
 }
